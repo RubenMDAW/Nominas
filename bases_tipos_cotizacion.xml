@@ -1,0 +1,182 @@
+<regimen_general_seguridad_social>
+    <fecha>2022</fecha>
+    <bases_cotizacion_contingencias_comunes>
+        <grupo_cotizacion numero="1">
+            <categoria_profesional>Ingenieros y Licenciados.Personal de alta dirección no incluido
+            en el artículo 1.3.c) del Estatuto de los Trabajadores</categoria_profesional>
+            <bases_minima_mes></bases_minima_mes>
+            <bases_maxima_mes></bases_maxima_mes>
+        </grupo_cotizacion>
+        <grupo_cotizacion numero="2">
+            <categoria_profesional>Ingenieros Técnicos, Peritos y Ayudantes Titulados</categoria_profesional>
+            <bases_minima_mes></bases_minima_mes>
+            <bases_maxima_mes></bases_maxima_mes>
+        </grupo_cotizacion>
+        <grupo_cotizacion numero="3">
+            <categoria_profesional>Jefes Administrativos y de Taller</categoria_profesional>
+            <bases_minima_mes></bases_minima_mes>
+            <bases_maxima_mes></bases_maxima_mes>
+        </grupo_cotizacion>
+    </grupo_cotizacion>
+    <grupo_cotizacion numero="4">
+        <categoria_profesional>Ayudantes no Titulados</categoria_profesional>
+        <bases_minima_mes></bases_minima_mes>
+        <bases_maxima_mes></bases_maxima_mes>
+    </grupo_cotizacion>
+    <grupo_cotizacion numero="5">
+        <categoria_profesional>Oficiales Administrativos</categoria_profesional>
+        <bases_minima_mes></bases_minima_mes>
+        <bases_maxima_mes></bases_maxima_mes>
+    </grupo_cotizacion>
+    <grupo_cotizacion numero="6">
+        <categoria_profesional>Subalternos</categoria_profesional>
+        <bases_minima_mes></bases_minima_mes>
+        <bases_maxima_mes></bases_maxima_mes>
+    </grupo_cotizacion>
+    <grupo_cotizacion numero="7">
+        <categoria_profesional>Auxiliares Administrativos</categoria_profesional>
+        <bases_minima_mes></bases_minima_mes>
+        <bases_maxima_mes></bases_maxima_mes>
+    </grupo_cotizacion>
+    <grupo_cotizacion numero="8">
+        <categoria_profesional>Oficiales de primera y segunda</categoria_profesional>
+        <bases_minima_mes></bases_minima_mes>
+        <bases_maxima_mes></bases_maxima_mes>
+    </grupo_cotizacion>
+    <grupo_cotizacion numero="9">
+        <categoria_profesional>Oficiales de tercera y Especialistas</categoria_profesional>
+        <bases_minima_mes></bases_minima_mes>
+        <bases_maxima_mes></bases_maxima_mes>
+    </grupo_cotizacion>
+    <grupo_cotizacion numero="10">
+        <categoria_profesional>Peones</categoria_profesional>
+        <bases_minima_mes></bases_minima_mes>
+        <bases_maxima_mes></bases_maxima_mes>
+    </grupo_cotizacion>
+    <grupo_cotizacion numero="11">
+        <categoria_profesional>Trabajadores menores de dieciocho años, cualquiera que sea su categoría profesional</categoria_profesional>
+        <bases_minima_mes></bases_minima_mes>
+        <bases_maxima_mes></bases_maxima_mes>
+    </grupo_cotizacion>
+</bases_cotizacion_contingencias_comunes>
+<tipos_cotizacion>
+    <contingencias tipo="Comunes">
+        <empresa></empresa>
+        <trabajadores></trabajadores>
+        <total></total>
+    </contingencias>
+    <contingencias tipo="Horas_Extraordinarias_Fuerz_Mayor">
+        <empresa></empresa>
+        <trabajadores></trabajadores>
+        <total></total>
+    </contingencias>
+    <contingencias tipo="Resto_Horas_Extraordinarias">
+        <empresa></empresa>
+        <trabajadores></trabajadores>
+        <total></total>
+    </contingencias>
+</tipos_cotizacion>
+<desempleo>
+    <tipo_desempleo>Tipo General:Contratación indefinida, incluidos los contratos indefinidos a tiempo parcial
+     y fijos discontinuos, contratación de duración determinada en las modalidades de contratos formativos en 
+     prácticas y para la formación y el aprendizaje, de relevo, interinidad y contratos, cualquiera que sea la 
+     modalidad, realizados con trabajadores discapacitados</tipo_desempleo>
+    <empresa></empresa>
+    <trabajadores></trabajadores>
+    <total></total>
+</desempleo>
+<desempleo>
+    <tipo_desempleo>Contrato duración determinada Tiempo Completo</tipo_desempleo>
+    <empresa></empresa>
+    <trabajadores></trabajadores>
+    <total></total>
+</desempleo>
+<desempleo>
+    <tipo_desempleo>Contrato duración determinada Tiempo Parcial</tipo_desempleo>
+    <empresa></empresa>
+    <trabajadores></trabajadores>
+    <total></total>
+</desempleo>
+<fogasa>
+    <empresa></empresa>
+    <trabajadores></trabajadores>
+    <total></total>
+</fogasa>
+<formacion_profesional>
+    <empresa></empresa>
+    <trabajadores></trabajadores>
+    <total></total>
+</formacion_profesional>
+<topes_cotizacion_accidentes_trabajo_enfermedades_profesionales>
+    <maximo></maximo>
+    <minimo></minimo>
+</topes_cotizacion_accidentes_trabajo_enfermedades_profesionales>
+<contrato_trabajo_tiempo_parcial>
+    <grupo_cotizacion numero="1">
+        <base_minima_hora></base_minima_hora>
+    </grupo_cotizacion>
+    <grupo_cotizacion numero="2">
+        <base_minima_hora></base_minima_hora>
+    </grupo_cotizacion>
+    <grupo_cotizacion numero="3">
+        <base_minima_hora></base_minima_hora>
+    </grupo_cotizacion>
+    <grupo_cotizacion numero="4">
+        <base_minima_hora></base_minima_hora>
+    </grupo_cotizacion>
+    <grupo_cotizacion numero="5">
+        <base_minima_hora></base_minima_hora>
+    </grupo_cotizacion>
+    <grupo_cotizacion numero="6">
+        <base_minima_hora></base_minima_hora>
+    </grupo_cotizacion>
+    <grupo_cotizacion numero="7">
+        <base_minima_hora></base_minima_hora>
+    </grupo_cotizacion>
+    <grupo_cotizacion numero="8">
+        <base_minima_hora></base_minima_hora>
+    </grupo_cotizacion>
+    <grupo_cotizacion numero="9">
+        <base_minima_hora></base_minima_hora>
+    </grupo_cotizacion>
+    <grupo_cotizacion numero="10">
+        <base_minima_hora></base_minima_hora>
+    </grupo_cotizacion>
+</contrato_trabajo_tiempo_parcial>
+<cotizacion_contrato_formacion_aprendizaje>
+    <concepto>
+        <tipo_concepto>Por Contingencias Comunes</tipo_concepto>
+        <empresa></empresa>
+        <trabajadores></trabajadores>
+        <total></total>
+    </concepto>
+    <concepto>
+        <tipo_concepto>Por Accidentes de Trabajo y Enfermedades Profesionales</tipo_concepto>
+        <empresa></empresa>
+        <trabajadores></trabajadores>
+        <total></total>
+    </concepto>
+    <concepto>
+        <tipo_concepto>Desempleo</tipo_concepto>
+        <empresa></empresa>
+        <trabajadores></trabajadores>
+        <total></total>
+    </concepto>
+    <concepto>
+        <tipo_concepto>Fondo de Garantía Salarial</tipo_concepto>
+        <empresa></empresa>
+        <trabajadores></trabajadores>
+        <total></total>
+    </concepto>
+</cotizacion_contrato_formacion_aprendizaje>
+<salario_minimo_interprofesional>
+    <diario></diario>
+    <mensual></mensual>
+    <anual></anual>
+</salario_minimo_interprofesional>
+<indicador_publico_rentas_efecto_multiples>
+    <diario></diario>
+    <mensual></mensual>
+    <anual></anual>
+</indicador_publico_rentas_efecto_multiples>
+</regimen_general_seguridad_social>
