@@ -28,12 +28,14 @@ CREATE TABLE EMPLEADO(
     NUM_SS INT  NOT NULL,/* OPCIONAL.............. */
     FECHA_ALTA DATE  NOT NULL,
     FECHA_BAJA DATE,
+    EMPRESA varchar(20),
     CATEGORIA INT ,/* FK DE CATORIAS...*/
     -- ANTIGUEDAD DATE ,/* OPCIONAL.............. */
     TIPO_CONTRATO ENUM("Fijo discontinuo","Indefinido"),
     JORNADA ENUM("Completa","Media"),
     HORAS INT,
-    CONSTRAINT Pk_EMPLE PRIMARY KEY (DNI)
+    PRIMARY KEY (DNI,EMPRESA),
+    CONSTRAINT FK_CIF_EMPLE foreign key(EMPRESA) references EMPRESA(CIF)
 );
 
 ALTER TABLE EMPLEADO
