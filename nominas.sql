@@ -1,61 +1,86 @@
-CREATE DATABASE NOMINAS;
+CREATE DATABASE NOMINAS CHARACTER SET utf8 COLLATE utf8_spanish_ci;;
 USE NOMINAS;
 
 
 /* Tabla de Categorías */
 CREATE TABLE CATEGORIAS(
 ID INT,
-NOMBRE_PUESTO VARCHAR(50) NOT NULL,
+NOMBRE_PUESTO VARCHAR(150) NOT NULL,
 SALRIO_BASE DOUBLE NOT NULL,
 CONSTRAINT pk_CAT PRIMARY key (ID)
 );
 
-
-
-CREATE TABLE EMPRESA(
-CIF varchar(20),
-NOMBRE_FISCAL VARCHAR(200),
-DOMICILIO varchar(200),
-CCC int,
-CONSTRAINT fk_EMP PRIMARY KEY (CIF)
+CREATE TABLE empresa(
+id INT(11) AUTO_INCREMENT PRIMARY KEY,
+nombre VARCHAR(50),
+cif VARCHAR(9),
+domicilio VARCHAR(200),
+ccc INT(12)
 );
-
 
 /* Tabla de Empleados */
-CREATE TABLE EMPLEADO
-DNI VARCHAR(10) NOT NULL,
-NOMBRE varchar(50) NOT NULL,
-APELLIDOS VARCHAR(70) NOT NULL,
-DOMICILIO VARCHAR(200) NOT NULL,
-NUM_S.S INT  NOT NULL,/* OPCIONAL.............. */
-FECHA_ALTA DATE  NOT NULL,
-FECHA_BAJA DATE,
-CATEGORIA INT ,/* FK DE CATORIAS...*/
-ANTIGUEDAD DATE ,/* OPCIONAL.............. */
-TIPO_CONTRATO INT,
-CONSTRAINT Pk_EMPLE PRIMARY KEY (DNI)
+CREATE TABLE empleado(
+id INT(11) AUTO_INCREMENT,
+id_empresa INT(11),
+nombre VARCHAR(50),
+apellidos VARCHAR(50),
+dni VARCHAR(10),
+domicilio VARCHAR(70),
+ss INT(12),
+fecha_alta DATE,
+fecha_baja DATE,
+categoria INT(2),
+nivel INT(1),
+letra CHAR DEFAULT 0,
+-- OPCIONALES
+antiguedad ENUM("SI","NO"),
+tipo_de_contrato ENUM("Indefinido","Temporal"),
+jornada ENUM("Completa","Parcial"),
+PRIMARY KEY(id,id_empresa)
+-- FALTAN FOREIGNS KEYS --
 );
-ALTER TABLE EMPLEADO
-ADD CONSTRAINT FK_CAT_EMPLE foreign key(CATEGORIA) references CATEGORIAS(ID)
 
-
-
-CREATE TABLE NOMINA(
-DNI INT,
-MES MONTH check( MES between 1 and 12 ),
-ANYO YEAR,
-DIA DAY,
-SLARIO_BASE DOUBLE,
-COMPLEMENETOS DOUBLE,
-ID_EMPRESA INT,
-CONSTRAINT PK_NOMINA primary key(DNI,MES,ANYO)
+CREATE TABLE nominas(
+id INT(11) AUTO_INCREMENT,
+id_empresa INT(11),
+id_trabajador INT(11),
+fecha_inicio DATE,
+fecha_final DATE,
+empresa VARCHAR(50),
+domicilio VARCHAR(200),
+cif VARCHAR(9),
+ccc INT(12),
+trabajador VARCHAR(50),
+nif VARCHAR(9),
+ss INT(12),
+categoria_profesional VARCHAR(150),
+grupo_cotizacion INT(2),
+fecha_antiguedad DATE,
+salario_base DECIMAL(10,2),
+vacaciones DECIMAL(10,2),
+extraordinarias DECIMAL(6,2),
+total_devengado DECIMAL(10,2),
+contingencias_comunes DECIMAL(6,2),
+desempleo DECIMAL(6,2),
+formacion_profesional DECIMAL(10,2),
+horas_extras DECIMAL(10,2),
+total_aportaciones DECIMAL(10,2),
+irpf DECIMAL(10,2),
+total_a_deducir DECIMAL(10,2),
+liquido_total_a_percibir DECIMAL(10,2),
+remuneracion_personal DECIMAL(10,2),
+prorrata_pagas_extras DECIMAL(10,2),
+base_incapacidad_temporal DECIMAL(10,2),
+base_cotizacion_ss DECIMAL(10,2),
+base_exp_regulacion_empleo DECIMAL(10,2),
+at_ep DECIMAL(10,2),
+e_desempleo DECIMAL(10,2),
+e_formacion_profesional DECIMAL(10,2),
+fondo_garantia_social DECIMAL(10,2),
+total_aportacion_empresarial DECIMAL(10,2),
+PRIMARY KEY(id,id_empresa,id_trabajador)
+-- FALTAN FOREIGNS KEYS --
 );
-ALTER TABLE NOMINA
-ADD CONSTRAINT FK_EMPLE_NOM FOREIGN KEY (DNI) REFERENCES  EMPLEADO(DNI);
-ALTER TABLE NOMINA
-ADD CONSTRAINT FK_EMPR_NOM FOREIGN KEY (ID_EMPRESA) REFERENCES EMPRESA(CIF);
-
-
 
 
 CREATE TABLE DEDUCCIONES(
@@ -63,11 +88,29 @@ CONTINGENCIAS_COMUNES DOUBLE (1,1),
 DESEMPLEO DOUBLE (1,1),
 FORMACION_PROFESIONAL DOUBLE(1,1),
 HORAS_EXTRAS_NORMALES DOUBLE (1,1),
-HORAS_EXTRAS_FUERZA_MAYOR INT DEFAULT 2, 
-TIPO_CONTRATO ....
-
+HORAS_EXTRAS_FUERZA_MAYOR INT DEFAULT 2
 );
 
+CREATE TABLE Horas_Extra(
+    Id INT(11) PRIMARY KEY AUTO_INCREMENT ,
+    DNI VARCHAR(10) NOT NULL,
+    CIF varchar(20),
+    Horas DOUBLE (2,2),
+    Fecha_inicio DATE,
+    Fecha_final DATE
+    );
+
+INSERT INTO CATEGORIAS VALUES(1,'Jefe Administración Superior',23117.39),
+(2,'Programador o técnico de sistemas y comunicaciones',20283.11),
+(3,'Programador maquinas auxiliares',18394.34);
+
+INSERT INTO EMPRESA VALUES('A1111111','El Gato','El Campello Nº14',11111111111),
+('B2222222','El Perro','Los Arenales Nº1',22222222222),
+('C3333333','El Camello','El Altet Nº1',33333333333);
+
+INSERT INTO EMPLEADO VALUES('11223344A','Alfredo',' Castillo Casas','C/Avenida Libertad Nº4','111111111111','2014-01-25',NULL,2,NULL,1),
+('77445569B','Lourdes',' Garcia Garcia','C/Poeta Machado Nº7','222222222222','2018-11-01',NULL,1,NULL,2),
+('44223368Y','Teresa',' Macia Flores','C/Almagros Nº44','333333333333','2020-10-27',NULL,3,NULL,3);
 /*
 "LOGICA"
 Categoría: cada uno de los perfiles profesionales fijados en el convenio colectivo de la
@@ -95,29 +138,3 @@ empleados. Su importe varía en función de los acuerdos alcanzados en los conve
 colectivos. 
 
 */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-GRANT ALL ON *.* TO 'admin'@'localhost' IDENTIFIED BY 'password' WITH GRANT OPTION;
-
-
-
-
-
-
-
