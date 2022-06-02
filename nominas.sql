@@ -88,7 +88,7 @@ e_formacion_profesional DECIMAL(10,2),
 fondo_garantia_social DECIMAL(10,2),
 cotizacion_adicion_horas_extras DECIMAL(10,2),
 total_aportacion_empresarial DECIMAL(10,2),
-PRIMARY KEY(id,id_empresa,id_trabajador)
+PRIMARY KEY(id,id_empresa,idtrabajador)
 -- FALTAN FOREIGNS KEYS --
 );
 
